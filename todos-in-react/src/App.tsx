@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import { AddTodo } from './components/AddTodo'
+import { AddTodo } from './components/AddTodo/AddTodo'
 import { Todo } from './models/Todo'
-import { DisplayTodos } from './components/DisplayTodos'
+import { DisplayTodos } from './components/DisplayTodos/DisplayTodos'
 
 function App() {
 

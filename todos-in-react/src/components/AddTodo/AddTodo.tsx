@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react"
-import { defaultValue, Todo } from "../models/Todo"
+import { defaultValue, Todo } from "../../models/Todo"
 
 type AddTodoProps = {
     addTodo: (t: Todo) => void
@@ -25,7 +25,7 @@ export const AddTodo = (props: AddTodoProps) => {
 
 
     return<>
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
             <input 
             type="text" 
@@ -40,7 +40,7 @@ export const AddTodo = (props: AddTodoProps) => {
             onChange={handleChange}
             value={todo.description}/>
             
-            <h4>Priority</h4>
+            <label htmlFor="priority">Priority</label>
             <select name="priority" id="priority">
                 <option value={todo.priority}>Normal</option>
                 <option value={todo.priority}>Medium</option>

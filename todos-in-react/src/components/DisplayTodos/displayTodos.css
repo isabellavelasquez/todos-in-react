@@ -1,0 +1,13 @@
+.todos-wrapper {
+    display: flex;
+    flex: column;
+    justify-content: center;
+    width: 100%;
+
+    && .todo-column {
+        width: 100%;
+    }
+    && .done-column {
+        width: 100%;
+    }
+}

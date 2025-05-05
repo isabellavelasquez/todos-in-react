@@ -10,18 +10,20 @@ export const DisplayTodo = ({todo, markTodoAsDone, deleteTodo}: DisplayTodoProps
 
 
     return<>
-        <div className="todoCard">
-            <div className="todo">
-                <h3>{todo.title}</h3>
-                <p>{todo.description}</p>
-                <h4>{todo.priority}</h4>
-                <input type="checkbox" checked={todo.isDone} onChange={() => {
+        <li>
+            <div className="todoCard">
+                <div className="todo">
+                    <h3>{todo.title}</h3>
+                    <p>{todo.description}</p>
+                    <h4>{todo.priority}</h4>
+                    <input type="checkbox" checked={todo.isDone} onChange={() => {
                     markTodoAsDone(todo.id)
                 }}/>
                 <button onClick={() => {
                     deleteTodo(todo.id)
                 }}>Delete</button>
+                </div>
             </div>
-        </div>
+        </li>
     </>
 }
