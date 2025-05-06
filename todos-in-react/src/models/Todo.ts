@@ -16,6 +16,6 @@ export class Todo {
         id: 0,
         title: "",
         description: "",
-        priority: "Normal",
+        priority: "Low",
         isDone: false
     }
