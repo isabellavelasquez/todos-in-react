@@ -27,7 +27,7 @@ export const DisplayTodos = ({todos, markTodoAsDone, deleteTodo}: DisplayTodosPr
                 (a, b) => priorityOrder[b.priority] - priorityOrder[a.priority])
 
         
-            }// } else if(e.target.value === "alphabetical") {
+        }// } else if(e.target.value === "alphabetical") {
         //         sortedTodos = [...todos].sort((a,b) => a.title.localeCompare - b.title.localeCompare)
         // }
         
@@ -78,6 +78,5 @@ export const DisplayTodos = ({todos, markTodoAsDone, deleteTodo}: DisplayTodosPr
                 </ul>
             </div>
         </div>
-      </div>
     </>
 }
