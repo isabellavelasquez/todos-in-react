@@ -4,18 +4,20 @@ export class Todo {
     constructor(
         public title: string, 
         public description: string,
-        public priority: string, 
+        public priority: Priority, 
     ) {
         this.id = Date.now();
         this.isDone = false
     }
-
 }
+
+type Priority = "Low" | "Medium" | "High"
+
 
     export const defaultValue: Todo = {
         id: 0,
         title: "",
         description: "",
-        priority: "Normal",
+        priority: "Low",
         isDone: false
     }

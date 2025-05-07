@@ -9,7 +9,7 @@ export const AddTodo = (props: AddTodoProps) => {
 
     const [todo, setTodo] = useState<Todo>(defaultValue)
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setTodo({ ...todo, [e.target.id]: e.target.value})
     }
 
@@ -41,10 +41,10 @@ export const AddTodo = (props: AddTodoProps) => {
             value={todo.description}/>
             
             <label htmlFor="priority">Priority</label>
-            <select name="priority" id="priority">
-                <option value={todo.priority}>Normal</option>
-                <option value={todo.priority}>Medium</option>
-                <option value={todo.priority}>High</option>
+            <select id="priority" value={todo.priority} onChange={handleChange}>
+                <option value={"Low"}>Low</option>
+                <option value={"Medium"}>Medium</option>
+                <option value={"High"}>High</option>
             </select>
             <button>Add</button>
         </form>
