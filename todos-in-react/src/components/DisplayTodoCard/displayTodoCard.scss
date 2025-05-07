@@ -1,0 +1,14 @@
+.todoCard {
+    list-style: none;
+    border: 2px solid #A5B88C;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background-color: #C5DCA0;
+
+    &:hover {
+        border-color: darkblue;
+    }
+
+   
+}
