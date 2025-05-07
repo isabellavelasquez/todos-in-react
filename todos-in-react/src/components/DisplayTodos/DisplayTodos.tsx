@@ -4,10 +4,10 @@ import { DisplayTodo } from "../DisplayTodo/DisplayTodo"
 import './displayTodos.css'
 
 type DisplayTodosProps = {
-    todos: Todo[]
-    markTodoAsDone: (id: number) => void,
-    deleteTodo: (id: number) => void
-}
+  todos: Todo[];
+  markTodoAsDone: (id: number) => void;
+  deleteTodo: (id: number) => void;
+};
 
 
 export const DisplayTodos = ({todos, markTodoAsDone, deleteTodo}: DisplayTodosProps) => {
@@ -78,5 +78,6 @@ export const DisplayTodos = ({todos, markTodoAsDone, deleteTodo}: DisplayTodosPr
                 </ul>
             </div>
         </div>
+      </div>
     </>
 }

@@ -1,28 +1,54 @@
-import { ChangeEvent, FormEvent, useState } from "react"
-import { defaultValue, Todo } from "../../models/Todo"
+import { ChangeEvent, FormEvent, useState } from "react";
+import { defaultValue, Todo } from "../../models/Todo";
 
 type AddTodoProps = {
-    addTodo: (t: Todo) => void
-}
+  addTodo: (t: Todo) => void;
+};
 
 export const AddTodo = (props: AddTodoProps) => {
+  const [todo, setTodo] = useState<Todo>(defaultValue);
 
-    const [todo, setTodo] = useState<Todo>(defaultValue)
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+  ) => {
+    setTodo({ ...todo, [e.target.id]: e.target.value });
+  };
 
+<<<<<<< HEAD
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setTodo({ ...todo, [e.target.id]: e.target.value})
     }
+=======
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+>>>>>>> 689b4253d02b2832bf0b45ca9be9d291d8b798eb
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    props.addTodo(todo);
+    console.log(todo);
 
-        props.addTodo(todo);
-        console.log(todo)
+    setTodo(defaultValue);
+  };
 
+  return (
+    <>
+      <form className="form" onSubmit={handleSubmit}>
+        <label htmlFor="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          onChange={handleChange}
+          value={todo.title}
+        />
 
-        setTodo(defaultValue);
-    }   
+        <label htmlFor="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          onChange={handleChange}
+          value={todo.description}
+        />
 
+<<<<<<< HEAD
 
     return<>
         <form className="form" onSubmit={handleSubmit}>
@@ -48,5 +74,21 @@ export const AddTodo = (props: AddTodoProps) => {
             </select>
             <button>Add</button>
         </form>
+=======
+        <label htmlFor="priority">Priority</label>
+        <select
+          name="priority"
+          id="priority"
+          onChange={handleChange}
+          value={todo.priority}
+        >
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button>Add</button>
+      </form>
+>>>>>>> 689b4253d02b2832bf0b45ca9be9d291d8b798eb
     </>
-}
+  );
+};
