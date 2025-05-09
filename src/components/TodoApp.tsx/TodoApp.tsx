@@ -1,10 +1,9 @@
-import { ChangeEvent, useState } from "react";
-import "./App.scss";
-import { AddTodo } from "./components/AddTodo/AddTodo";
-import { Todo } from "./models/Todo";
-import { DisplayColumns } from "./components/DisplayColumns";
+import { useState, ChangeEvent } from "react";
+import { Todo } from "../../models/Todo";
+import { AddTodo } from "../AddTodo/AddTodo";
+import { DisplayColumns } from "../DisplayColumns";
 
-function App() {
+export const TodoApp = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [sortMode, setSortMode] = useState<string>("");
 
@@ -13,22 +12,18 @@ function App() {
       ...todos,
       new Todo(newTodo.title, newTodo.description, newTodo.priority),
     ]);
-    console.log("this is a list of the todos: ", todos);
   };
 
   const markTodoAsDone = (id: number) => {
     setTodos(todos.map((t) => (t.id === id ? { ...t, isDone: !t.isDone } : t)));
-
   };
 
   const deleteTodo = (id: number) => {
-    setTodos([...todos.filter((t) => t.id !== id)])
-  }
+    setTodos([...todos.filter((t) => t.id !== id)]);
+  };
 
   const handleSortingChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSortMode(e.target.value);
-
-    
   };
 
   const sortTodos = (): Todo[] => {
@@ -53,15 +48,15 @@ function App() {
 
   return (
     <>
-      <AddTodo addTodo={addTodo} />
-      <DisplayColumns
-        todos={sortedTodos}
-        markTodoAsDone={markTodoAsDone}
-        deleteTodo={deleteTodo}
-        handleSortingChange = {handleSortingChange}
-      />
+      <div className="min-h-screen flex items-center justify-center bg-lime-900">
+        <AddTodo addTodo={addTodo} />
+        <DisplayColumns
+          todos={sortedTodos}
+          markTodoAsDone={markTodoAsDone}
+          deleteTodo={deleteTodo}
+          handleSortingChange={handleSortingChange}
+        />
+      </div>
     </>
   );
-}
-
-export default App;
+};
