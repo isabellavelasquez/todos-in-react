@@ -17,26 +17,34 @@ export const DisplayColumns = ({
 }: DisplayColumnsProps) => {
   return (
     <>
-      <div className="flex flex-row ">
-        <h1>Todo</h1>
-        {
-          <DisplayColumn
-            todos={todos.filter((t) => !t.isDone)}
-            markTodoAsDone={markTodoAsDone}
-            deleteTodo={deleteTodo}
-            handleSortingChange={handleSortingChange}
-          />
-        }
+      <div className="flex flex-row columns-wrapper h-auto">
+        <div className="flex justify-center column-wrapper column-style">
+          <h1 className="text-2xl	">Todo</h1>
+          <div className="cards-wrapper mx-4">
+            {
+              <DisplayColumn
+                todos={todos.filter((t) => !t.isDone)}
+                markTodoAsDone={markTodoAsDone}
+                deleteTodo={deleteTodo}
+                handleSortingChange={handleSortingChange}
+              />
+            }
+          </div>
+        </div>
 
-        <h1>Done</h1>
-        {
-          <DisplayColumn
-            todos={todos.filter((t) => t.isDone)}
-            markTodoAsDone={markTodoAsDone}
-            deleteTodo={deleteTodo}
-            handleSortingChange={handleSortingChange}
-          />
-        }
+        <div className="column-wrapper column-style">
+          <h1 className="text-2xl	">Done</h1>
+          <div className="cards-wrapper mx-4">
+            {
+              <DisplayColumn
+                todos={todos.filter((t) => t.isDone)}
+                markTodoAsDone={markTodoAsDone}
+                deleteTodo={deleteTodo}
+                handleSortingChange={handleSortingChange}
+              />
+            }
+          </div>
+        </div>
       </div>
     </>
   );

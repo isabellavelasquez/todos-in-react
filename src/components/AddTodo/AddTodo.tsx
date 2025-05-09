@@ -23,15 +23,18 @@ export const AddTodo = (props: AddTodoProps) => {
   };
   return (
     <>
-      <div className="mb-4 flex">
-        <form className="form" onSubmit={handleSubmit}>
+      <div className="h-80">
+        <form
+          className="w-50 flex flex-col items-center mb-4 space-y-4"
+          onSubmit={handleSubmit}
+        >
           <label htmlFor="title">Title</label>
           <input
             type="text"
             id="title"
             onChange={handleChange}
             value={todo.title}
-            className="flex-grow px-3 py-2 border rounded-l-lg rounded-r-lg"
+            className="input-style"
           />
 
           <label htmlFor="description">Description</label>
@@ -40,15 +43,23 @@ export const AddTodo = (props: AddTodoProps) => {
             id="description"
             onChange={handleChange}
             value={todo.description}
+            className="input-style"
           />
 
           <label htmlFor="priority">Priority</label>
-          <select id="priority" value={todo.priority} onChange={handleChange}>
+          <select
+            id="priority"
+            value={todo.priority}
+            onChange={handleChange}
+            className="border border-black"
+          >
             <option value={"Low"}>Low</option>
             <option value={"Medium"}>Medium</option>
             <option value={"High"}>High</option>
           </select>
-          <button className="bg-lime-950">Add</button>
+          <button className="w-20 border-none rounded-lg bg-amber-300 text-black hover:bg-amber-400">
+            Add
+          </button>
         </form>
       </div>
     </>
