@@ -17,7 +17,7 @@ export const DisplayColumn = ({
 }: DisplayColumnProps) => {
   return (
     <>
-      <label htmlFor="sort">Sort by</label>
+      <label htmlFor="sort">Sort by </label>
       <select
         name="sort"
         id="sort"

@@ -1,8 +1,17 @@
+
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+body {
+  font-family: 'Indie Flower', cursive;
+}
+
+
 
 .input-style {
   @apply flex-grow px-3 py-2 border rounded-l-lg rounded-r-lg;
 }
 .column-style {
   @apply w-100 flex flex-col items-center;
-}
+} 

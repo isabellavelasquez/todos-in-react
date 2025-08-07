@@ -17,10 +17,13 @@ export const DisplayColumns = ({
 }: DisplayColumnsProps) => {
   return (
     <>
-      <div className="flex flex-row columns-wrapper h-auto">
-        <div className="flex justify-center column-wrapper column-style">
-          <h1 className="text-2xl	">Todo</h1>
-          <div className="cards-wrapper mx-4">
+      <div className="flex flex-col w-full gap-10 px-7 columns-wrapper h-auto 
+      md:px-50 
+      md:flex-row">
+
+       <div className="flex flex-col w-full bg-purple-300 rounded-lg p-6 shadow-md">
+          <h1 className="text-2xl">Todo</h1>
+          <div className="cards-wrapper">
             {
               <DisplayColumn
                 todos={todos.filter((t) => !t.isDone)}
@@ -30,11 +33,11 @@ export const DisplayColumns = ({
               />
             }
           </div>
-        </div>
+        </div> 
 
-        <div className="column-wrapper column-style">
+        <div className="column-wrapper flex flex-col w-full bg-purple-300 rounded-lg p-6 shadow-md">
           <h1 className="text-2xl	">Done</h1>
-          <div className="cards-wrapper mx-4">
+          <div className="cards-wrapper ">
             {
               <DisplayColumn
                 todos={todos.filter((t) => t.isDone)}

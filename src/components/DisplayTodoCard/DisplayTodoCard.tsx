@@ -13,25 +13,25 @@ export const DisplayTodoCard = ({
 }: DisplayTodoCardProps) => {
   return (
     <>
-      <li className="flex flex-col items-center p-4 bg-blue rounded-xl shadow-lg">
-        <h4>{todo.priority}</h4>
+      <li className="flex flex-row items-center justify-between p-4 bg-blue rounded-xl shadow-lg bg-violet-200">
 
-        <input
+        <input 
+          className="w-4 h-4 rounded mr-2"
           type="checkbox"
           checked={todo.isDone}
           onChange={() => {
             markTodoAsDone(todo.id);
           }}
         />
-        <h3>{todo.title}</h3>
         <p>{todo.description}</p>
         <button
-          className="ml-auto text-xs border-none p-2 rounded-lg bg-red-500 text-white hover:bg-red-600"
+className="ml-auto text-xs py-1 px-2 rounded-lg border border-black bg-transparent text-black hover:bg-purple-800 hover:text-white transition"
+
           onClick={() => {
             deleteTodo(todo.id);
           }}
         >
-          Delete
+          X
         </button>
       </li>
     </>

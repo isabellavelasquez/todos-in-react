@@ -10,7 +10,7 @@ export const TodoApp = () => {
   const addTodo = (newTodo: Todo) => {
     setTodos([
       ...todos,
-      new Todo(newTodo.title, newTodo.description, newTodo.priority),
+      new Todo(newTodo.description, newTodo.priority),
     ]);
   };
 
@@ -39,7 +39,7 @@ export const TodoApp = () => {
         (a, b) => priorityOrder[b.priority] - priorityOrder[a.priority]
       );
     } else if (sortMode === "alphabetical") {
-      sortedTodos.sort((a, b) => a.title.localeCompare(b.title));
+      sortedTodos.sort((a, b) => a.description.localeCompare(b.description));
     }
     return sortedTodos;
   };
@@ -48,7 +48,8 @@ export const TodoApp = () => {
 
   return (
     <>
-      <div className="app-wrapper min-h-screen flex flex-col items-center justify-center bg-orange-300">
+      <div className="app-wrapper min-h-screen flex flex-col items-center justify-center bg-fuchsia-100 py-10">
+        <h1 className="text-5xl pb-7">To do list</h1>
         <AddTodo addTodo={addTodo} />
         <DisplayColumns
           todos={sortedTodos}
