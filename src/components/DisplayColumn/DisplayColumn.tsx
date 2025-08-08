@@ -27,7 +27,7 @@ export const DisplayColumn = ({
         <option value="priority">Priority</option>
         <option value="alphabetical">A-Z</option>
       </select>
-      <ul className="space-y-2">
+      <ul className="space-y-2 pt-3">
         {todos.map((t) => (
           <DisplayTodoCard
             key={t.id}
